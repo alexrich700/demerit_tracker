@@ -13,7 +13,8 @@ var session = require("express-session");
 var passportLocalMongoose = require("passport-local-mongoose");
 var User = require("./models/user");
 
-mongoose.connect("mongodb://localhost/work");
+// mongoose.connect("mongodb://localhost/work");
+mongoose.connect("mongodb://alexrich700:douglas1969@ds121483.mlab.com:21483/work");
 
 app.use(require("express-session")({
     secret: "Ximena is my gf",
