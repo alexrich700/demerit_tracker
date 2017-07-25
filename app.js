@@ -12,9 +12,6 @@ var LocalStrategy = require("passport-local");
 var session = require("express-session");
 var passportLocalMongoose = require("passport-local-mongoose");
 var User = require("./models/user");
-var flash = require("connect-flash");
-
-app.use(flash());
 
 mongoose.connect("mongodb://localhost/work");
 
