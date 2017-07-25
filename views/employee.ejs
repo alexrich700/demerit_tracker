@@ -1,6 +1,16 @@
 <% include partials/header %>
 
 <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <a type="button" class=" btn btn-success" href="/employee/new">Add New Employee</a>
+        </div>
+        <div class="col-md-6">
+            <a type="button" class="btn btn-danger disabled pull-right" href="/employee/delete">Delete Employee</a>
+        </div>
+        <hr>
+        <hr>
+    </div>
     
     <div class="row text-center">
         <% employee.forEach(function(employees){ %>
@@ -16,5 +26,6 @@
         <% }); %>
     </div>
 </div>
+
 
 <% include partials/footer %>
