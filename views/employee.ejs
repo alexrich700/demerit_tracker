@@ -2,16 +2,16 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <a type="button" class=" btn btn-success" href="/employee/new">Add New Employee</a>
+        <div class="col-md-6" style="display: inline-block;">
+            <a type="button" class=" btn btn-success pull-left" href="/employee/new">Add New Employee</a>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" style="display:inline-block; position:relative; float:right">
             <a type="button" class="btn btn-danger disabled pull-right" href="/employee/delete">Delete Employee</a>
         </div>
-        <hr>
-        <hr>
     </div>
-    
+    <hr>
+</div>
+<div class="container">
     <div class="row text-center">
         <% employee.forEach(function(employees){ %>
             <div class="col-md-3 col-sm-12">
