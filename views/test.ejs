@@ -1,0 +1,87 @@
+<% include partials/header%>
+<div class="container">
+<section style="background-color:red;">
+  <!--for demo wrap-->
+  <h1>Fixed Table header</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Price</th>
+          <th>Change</th>
+          <th>Change %</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        <tr>
+          <td>AUSTRALIAN COMPANY </td>
+          <td>$1.38</td>
+          <td>+2.01</td>
+          <td>-0.36%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+</div>
+
+<!-- follow me template -->
+<div class="made-with-love">
+  Made with
+  <i>♥</i> by
+  <a target="_blank" href="https://codepen.io/nikhil8krishnan">Nikhil Krishnan</a>
+</div>
+
+<script>
+    $(window).on("load resize ", function() {
+  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+  $('.tbl-header').css({'padding-right':scrollWidth});
+}).resize();
+</script>
+
+
+
+<!--TEST-->
+
+<div class="container">
+    <section>
+        <div class="row">
+            
+                <div class="col-md-2"> Employees Name</div>
+                    <span class="col-md-1">|</span>
+                <div class="col-md-2"> Number Of Tally Marks Received </div>
+                    <span class="col-md-1">|</span>
+                <div class="col-md-2"> Number Of Strikes Received </div>
+                    <span class="col-md-1">|</span>
+                <div class="col-md-3" id="demo"> Total Number Of Marks </div>
+                <hr>
+        </div>
+        <div class="row">
+            <% employee.forEach(function(employee){ %>
+            
+                <% var x = employee.tallymark; %>
+                <% var y = employee.strike; %>
+                <% var f = y * 3; %>
+                <% var total = f + x; %>
+            
+                      <div class="col-md-2"> <%= employee.name %> </div>
+                          <span class="col-md-1">|</span>
+                      <div class="col-md-2"> <%= employee.tallymark %> </div>
+                          <span class="col-md-1">|</span>
+                      <div class="col-md-2"> <%= employee.strike %> </div>
+                          <span class="col-md-1">|</span>
+                      <div class="col-md-3" id="demo">
+                          <%= total %>
+                      </div>
+                      <hr>
+                <% }) %>
+            </div>
+        </div>
+  </section> 
+</div>
+<% include partials/footer%>

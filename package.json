@@ -1,0 +1,14 @@
+{
+  "name": "alex",
+  "version": "1.0.0",
+  "description": "work",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alex",
+  "license": "ISC",
+  "dependencies": {
+    "connect-flash": "^0.1.1"
+  }
+}

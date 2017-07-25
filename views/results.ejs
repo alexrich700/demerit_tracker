@@ -1,0 +1,49 @@
+<% include partials/header %>
+
+<div class="container">
+<section>
+  <!--for demo wrap-->
+  <h1>Fixed Table header</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th style="text-align: center;">Name</th>
+          <th style="text-align: center;">Tally Marks</th>
+          <th style="text-align: center;">Strikes</th>
+          <th style="text-align: center;">Total Strikes</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        <% employee.forEach(function(employee){ %>
+                    <% var x = employee.tallymark; %>
+                    <% var y = employee.strike; %>
+                    <% var f = x / 3; %>
+                    <% var total = f + y; %>
+                    <% var final = Math.round(total * 100) / 100 %>
+            <tr class="1">
+                <td> <%= employee.name %> </td>
+                <td> <%= employee.tallymark %> </td>
+                <td> <%= employee.strike %> </td>
+                <td> <%= final %> </td>
+            </tr>  
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</section>
+</div>
+
+<script>
+    $(window).on("load resize ", function() {
+  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+  $('.tbl-header').css({'padding-right':scrollWidth});
+}).resize();
+</script>
+
+
+<% include partials/footer %>
